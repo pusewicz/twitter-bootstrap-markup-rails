@@ -5,34 +5,68 @@ require 'spec_helper'
 describe Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers do
   include BootstrapSpecHelper
 
-  before do
-    @output_buffer = ''
-  end
 
-  describe "#twitter_alert_info_block" do
-    it "has correct classes" do
-      concat twitter_alert_info_block("Message")
-      output_buffer.should have_tag('div.alert.alert-block.alert-info')
+  %w(error success info).each do |type|
+    describe "#twitter_alert_#{type}_block" do
+      before do
+        @output_buffer = ''
+      end
+
+      it "has correct classes" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag("div.alert.alert-block.alert-#{type}")
+      end
+
+      it "has message" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag('div', /Message/)
+      end
+
+      it "has close button" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag('div a.close', /×/)
+      end
+
+      it "has dismiss tag" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag('div a[data-dismiss="alert"]')
+      end
+
+      it "has a heading" do
+        concat send("twitter_alert_#{type}_block", "Message", :heading => "Heading1")
+        output_buffer.should have_tag('div h4.alert-heading', /Heading1/)
+      end
     end
 
-    it "has correct message" do
-      concat twitter_alert_info_block("Message")
-      output_buffer.should have_tag('div', /Message/)
-    end
+    describe "#twitter_alert_#{type}" do
+      before do
+        @output_buffer = ''
+      end
 
-    it "has close button" do
-      concat twitter_alert_info_block("Message")
-      output_buffer.should have_tag('div a.close', /×/)
-    end
+      it "has correct classes" do
+        concat send("twitter_alert_#{type}", "Message")
+        output_buffer.should have_tag("div.alert.alert-#{type}")
+      end
 
-    it "has dismiss tag" do
-      concat twitter_alert_info_block("Message")
-      output_buffer.should have_tag('div a[data-dismiss="alert"]')
-    end
+      it "has message" do
+        concat send("twitter_alert_#{type}", "Message")
+        output_buffer.should have_tag('div', /Message/)
+      end
 
-    it "has a heading" do
-      concat twitter_alert_info_block("Message", :heading => "Heading1")
-      output_buffer.should have_tag('div h4.alert-heading', /Heading1/)
+      it "has close button" do
+        concat send("twitter_alert_#{type}", "Message")
+        output_buffer.should have_tag('div a.close', /×/)
+      end
+
+      it "has dismiss tag" do
+        concat send("twitter_alert_#{type}", "Message")
+        output_buffer.should have_tag('div a[data-dismiss="alert"]')
+      end
+
+      it "has a heading" do
+        concat send("twitter_alert_#{type}", "Message", :heading => "Heading1")
+        output_buffer.should have_tag('div strong', /Heading1/)
+      end
     end
   end
 end
