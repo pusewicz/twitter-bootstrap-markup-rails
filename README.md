@@ -28,7 +28,7 @@ Render Info Block Alert in your view:
 
     twitter_alert_info_block("Hello!")
     # => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
-    
+
 Same with basic helper:
 
     twitter_alert("Hello!", :block => true, :type => "info")
@@ -38,6 +38,11 @@ Add Alert heading:
 
     twitter_alert("Hello!", :heading => "Hola!")
     # => '<div class="alert"><a class="close">×</a><strong>Hola!</strong>Hello!</div>'
+
+Notice Inline Label:
+
+    twitter_inline_label_notice("Info")
+    # => '<span class="label notice">Info</span>'
 
 Contributing
 ---
