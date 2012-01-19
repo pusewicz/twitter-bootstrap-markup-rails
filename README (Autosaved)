@@ -1,0 +1,14 @@
+Twitter Bootstrap Markup for Rails [![Build Status](https://secure.travis-ci.org/pusewicz/twitter-bootstrap-markup-rails.png)](http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails) [![Dependency Status](https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails.png)](https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails)
+===
+
+Installation
+---
+
+Add to your `Gemfile`:
+
+    gem "twitter-bootstrap-markup-rails", :git => "git://github.com/pusewicz/twitter-bootstrap-markup-rails.git"
+
+Documentation
+---
+
+Documentation is available on [RubyDoc](http://rubydoc.info/github/pusewicz/twitter-bootstrap-markup-rails).
