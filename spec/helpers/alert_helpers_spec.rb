@@ -5,19 +5,28 @@ require 'spec_helper'
 describe Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers do
   include BootstrapSpecHelper
 
-
   %w(error success info).each do |type|
     describe "#twitter_alert_#{type}_block" do
       before do
         @output_buffer = ''
       end
 
-      it "has correct classes" do
+      it "has alert class" do
         concat send("twitter_alert_#{type}_block", "Message")
-        output_buffer.should have_tag("div.alert.alert-block.alert-#{type}")
+        output_buffer.should have_tag("div.alert")
       end
 
-      it "has message" do
+      it "has alert-block class" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag("div.alert-block")
+      end
+
+      it "has alert-#{type} class" do
+        concat send("twitter_alert_#{type}_block", "Message")
+        output_buffer.should have_tag("div.alert-#{type}")
+      end
+
+      it "has a message" do
         concat send("twitter_alert_#{type}_block", "Message")
         output_buffer.should have_tag('div', /Message/)
       end
@@ -43,12 +52,17 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers do
         @output_buffer = ''
       end
 
-      it "has correct classes" do
+      it "has alert class" do
         concat send("twitter_alert_#{type}", "Message")
-        output_buffer.should have_tag("div.alert.alert-#{type}")
+        output_buffer.should have_tag("div.alert")
       end
 
-      it "has message" do
+      it "has alert-#{type} class" do
+        concat send("twitter_alert_#{type}", "Message")
+        output_buffer.should have_tag("div.alert-#{type}")
+      end
+
+      it "has a message" do
         concat send("twitter_alert_#{type}", "Message")
         output_buffer.should have_tag('div', /Message/)
       end

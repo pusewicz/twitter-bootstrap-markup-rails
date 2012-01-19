@@ -2,18 +2,6 @@
 
 module Twitter::Bootstrap::Markup::Rails::Helpers
   module AlertHelpers
-    %w(error success info).each do |type|
-      module_eval <<-EOF
-        def twitter_alert_#{type}(message, options = {})
-          twitter_alert(message, options.merge({ :type => "#{type}" }))
-        end
-
-        def twitter_alert_#{type}_block(message, options = {})
-          twitter_alert(message, options.merge({ :type => "#{type}", :block => true }))
-        end
-      EOF
-    end
-
     # Renders alert message
     #
     # @param [String] message message to be displayed
@@ -35,6 +23,18 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
         message,
         options
       ).to_s
+    end
+
+    %w(error success info).each do |type|
+      module_eval <<-EOF
+        def twitter_alert_#{type}(message, options = {})
+          twitter_alert(message, options.merge({ :type => "#{type}" }))
+        end
+
+        def twitter_alert_#{type}_block(message, options = {})
+          twitter_alert(message, options.merge({ :type => "#{type}", :block => true }))
+        end
+      EOF
     end
   end
 end
