@@ -14,11 +14,11 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     # Examples
     #
-    #   twitter_alert("Hello!")
+    #   bootstrap_alert("Hello!")
     #   # => '<div class="alert"><a class="close">×</a>Hello!</div>'
     #
     # Returns HTML String for the alert
-    def twitter_alert(message, options = {})
+    def bootstrap_alert_tag(message, options = {})
       Twitter::Bootstrap::Markup::Rails::Components::Alert.new(
         message,
         options
@@ -27,12 +27,12 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
 
     %w(error success info).each do |type|
       module_eval <<-EOF
-        def twitter_alert_#{type}(message, options = {})
-          twitter_alert(message, options.merge({ :type => "#{type}" }))
+        def bootstrap_alert_#{type}_tag(message, options = {})
+          bootstrap_alert_tag(message, options.merge({ :type => "#{type}" }))
         end
 
-        def twitter_alert_#{type}_block(message, options = {})
-          twitter_alert(message, options.merge({ :type => "#{type}", :block => true }))
+        def bootstrap_alert_#{type}_block_tag(message, options = {})
+          bootstrap_alert_tag(message, options.merge({ :type => "#{type}", :block => true }))
         end
       EOF
     end

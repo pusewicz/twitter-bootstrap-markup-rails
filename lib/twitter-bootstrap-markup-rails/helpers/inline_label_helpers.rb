@@ -9,11 +9,11 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     # Examples
     #
-    #   twitter_inline_label("Hello!")
+    #   bootstrap_inline_label("Hello!")
     #   # => '<span class="label">Hello!</span>'
     #
     # Returns HTML String for the label
-    def twitter_inline_label(message, options = {})
+    def bootstrap_inline_label_tag(message, options = {})
       Twitter::Bootstrap::Markup::Rails::Components::InlineLabel.new(
         message,
         options
@@ -22,8 +22,8 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
 
     %w(success warning important notice).each do |type|
       module_eval <<-EOF
-        def twitter_inline_label_#{type}(message, options = {})
-          twitter_inline_label(message, options.merge({ :type => "#{type}" }))
+        def bootstrap_inline_label_#{type}_tag(message, options = {})
+          bootstrap_inline_label_tag(message, options.merge({ :type => "#{type}" }))
         end
       EOF
     end

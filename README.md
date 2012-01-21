@@ -27,27 +27,27 @@ Examples
 
 Render Alert in your view:
 
-    twitter_alert("Hello!")
+    bootstrap_alert_tag("Hello!")
     # => '<div class="alert"><a class="close">×</a>Hello!</div>'
 
 Render Info Block Alert in your view:
 
-    twitter_alert_info_block("Hello!")
+    bootstrap_alert_info_block_tag("Hello!")
     # => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
 
 Same with basic helper:
 
-    twitter_alert("Hello!", :block => true, :type => "info")
+    bootstrap_alert_tag("Hello!", :block => true, :type => "info")
     # => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
 
 Add Alert heading:
 
-    twitter_alert("Hello!", :heading => "Hola!")
+    bootstrap_alert_tag("Hello!", :heading => "Hola!")
     # => '<div class="alert"><a class="close">×</a><strong>Hola!</strong>Hello!</div>'
 
 Notice Inline Label:
 
-    twitter_inline_label_notice("Info")
+    bootstrap_inline_label_notice_tag("Info")
     # => '<span class="label notice">Info</span>'
 
 Contributing
