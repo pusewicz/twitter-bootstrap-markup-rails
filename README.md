@@ -93,6 +93,4 @@ This library aims to support and is [tested against](http://travis-ci.org/pusewi
 * Ruby 1.8.7
 * Ruby 1.9.2
 * Ruby 1.9.3
-* Ruby Enterprise Edition
 * Rubinius
-* JRuby 
