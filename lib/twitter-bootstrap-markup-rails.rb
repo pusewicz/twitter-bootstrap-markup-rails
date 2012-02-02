@@ -10,6 +10,7 @@ module Twitter
         autoload :Components, "twitter-bootstrap-markup-rails/components"
 
         require "twitter-bootstrap-markup-rails/engine" if defined?(::Rails)
+        require "twitter-bootstrap-markup-rails/plugins"
       end
     end
   end

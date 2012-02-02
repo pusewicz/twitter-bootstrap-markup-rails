@@ -10,7 +10,7 @@ Installation
 Add to your `Gemfile`:
 
     gem "twitter-bootstrap-markup-rails", "0.1.0"
-    
+
 Currently Supported
 ---
 
@@ -49,6 +49,15 @@ Notice Inline Label:
 
     bootstrap_inline_label_notice_tag("Info")
     # => '<span class="label notice">Info</span>'
+
+Plugins
+---
+
+### For [SimpleNavigation](https://github.com/andi/simple-navigation)
+
+If you are using `simple-navigation` gem you can use the navigation renderer like this:
+
+    render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
 
 Contributing
 ---
