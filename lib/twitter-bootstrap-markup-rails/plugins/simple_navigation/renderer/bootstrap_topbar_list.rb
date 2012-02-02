@@ -1,6 +1,8 @@
 # Renders an ItemContainer as a <ul> element and its containing items as <li> elements.
 # Prepared to use inside the topbar of Twitter Bootstrap http://twitter.github.com/bootstrap/#navigation
 #
+# Source: https://gist.github.com/1550309
+#
 # Examples
 #
 #   render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
