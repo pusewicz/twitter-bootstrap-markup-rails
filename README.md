@@ -1,18 +1,34 @@
-Twitter Bootstrap 2.0 Markup for Rails [![Build Status](https://secure.travis-ci.org/pusewicz/twitter-bootstrap-markup-rails.png)](http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails) [![Dependency Status](https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails.png)](https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails)
-===
+# Twitter Bootstrap 2.0 Markup for Rails
+
+<table>
+    <tr>
+        <th>Version</th>
+        <td>v0.2.0</td>
+    </tr>
+    <tr>
+        <th>Build Status</th>
+        <td><a href="http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails"><img src="https://secure.travis-ci.org/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
+    </tr>
+    <tr>
+        <th>Dependency Status</th>
+        <td><a href="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails"><img src="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
+    </tr>
+    <tr>
+        <th>Changelog</th>
+        <td><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/wiki/Changelog">Changelog</a></td>
+    </tr>
+</table>
 
 This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a collection of helpers which should make it faster to use all the components provided by Twitter Bootstrap.
 
 
-Installation
----
+## Installation
 
 Add to your `Gemfile`:
 
     gem 'twitter-bootstrap-markup-rails', '0.2.0'
 
-Currently Supported
----
+## Currently Supported
 
 * Alert messages
 * Inline labels
