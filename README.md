@@ -9,7 +9,7 @@ Installation
 
 Add to your `Gemfile`:
 
-    gem "twitter-bootstrap-markup-rails", "0.1.0"
+    gem "twitter-bootstrap-markup-rails", "0.2.0"
 
 Currently Supported
 ---
