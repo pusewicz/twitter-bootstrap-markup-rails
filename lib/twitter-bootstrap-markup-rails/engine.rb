@@ -6,6 +6,7 @@ module Twitter::Bootstrap::Markup::Rails
       ActiveSupport.on_load(:action_view) do
         include Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers
         include Twitter::Bootstrap::Markup::Rails::Helpers::InlineLabelHelpers
+        include Twitter::Bootstrap::Markup::Rails::Helpers::FormHelpers
       end
     end
   end
