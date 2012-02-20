@@ -1,8 +1,6 @@
 # Renders an ItemContainer as a <ul> element and its containing items as <li> elements.
 # Prepared to use inside the topbar of Twitter Bootstrap http://twitter.github.com/bootstrap/#navigation
 #
-# Source: https://gist.github.com/1550309
-#
 # Examples
 #
 #   render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
@@ -43,7 +41,9 @@ class SimpleNavigation::Renderer::BootstrapTopbarList < SimpleNavigation::Render
     if item.url.nil?
       content_tag('span', item.name, link_options_for(item).except(:method))
     else
-      link_to(item.name, item.url, link_options_for(item))
+      name = item.name
+      name += ' <span class="caret"></span>' if include_sub_navigation?(item)
+      link_to(name, item.url, link_options_for(item))
     end
   end
 
