@@ -32,6 +32,8 @@ Add to your `Gemfile`:
 
 * Alert messages
 * Inline labels
+* buttons
+* button dropdowns
 
 Documentation
 ---
