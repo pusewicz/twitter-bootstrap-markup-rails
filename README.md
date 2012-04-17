@@ -32,6 +32,8 @@ Add to your `Gemfile`:
 
 * Alert messages
 * Inline labels
+* buttons
+* button dropdowns
 
 Documentation
 ---
@@ -65,6 +67,30 @@ Notice Inline Label:
 
     bootstrap_inline_label_notice_tag("Info")
     # => '<span class="label notice">Info</span>'
+
+Buttons:
+
+    bootstrap_button("Button Text", "#")
+    # => '<a class="btn" href="#">Button Text</a>'
+
+Dropdown Buttons:
+
+```
+bootstrap_button_dropdown do |b|
+    b.bootstrap_button "Button Title", "#"
+    b.link_to "First Dropdown Item", @item
+    b.link_to "Second Dropdown Item", @item2
+end
+# => '<div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            Button Title
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+        </ul>
+      </div>'
+```
 
 Plugins
 ---

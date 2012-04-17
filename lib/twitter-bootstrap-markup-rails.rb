@@ -6,6 +6,8 @@ module Twitter
       module Rails
         require "twitter-bootstrap-markup-rails/version"
 
+        require "twitter-bootstrap-markup-rails/helper_collection"
+
         autoload :Helpers, "twitter-bootstrap-markup-rails/helpers"
         autoload :Components, "twitter-bootstrap-markup-rails/components"
 

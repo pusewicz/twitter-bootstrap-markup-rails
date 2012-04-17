@@ -5,6 +5,8 @@ module Twitter::Bootstrap::Markup::Rails
     autoload :InlineLabel, 'twitter-bootstrap-markup-rails/components/inline_label'
     autoload :Form, 'twitter-bootstrap-markup-rails/components/form'
     autoload :FormBuilder, 'twitter-bootstrap-markup-rails/components/form_builder'
+    autoload :Button, 'twitter-bootstrap-markup-rails/components/button'
+    autoload :ButtonDropdown, 'twitter-bootstrap-markup-rails/components/button_dropdown'
   end
 end
 
