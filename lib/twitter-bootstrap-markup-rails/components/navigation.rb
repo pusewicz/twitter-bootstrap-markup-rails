@@ -27,7 +27,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
 
     def build_class
       classes = %w( nav )
-      classes << "nav-#{options[:type]}" if options[:type]
+      classes << "nav-#{ options[:type] || "tabs" }"
       classes << "nav-stacked" if options[:stacked]
       classes.join(" ")
     end
