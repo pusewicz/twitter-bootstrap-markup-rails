@@ -12,7 +12,8 @@ module Twitter::Bootstrap::Markup::Rails::Components
         html = ""
 
         @elements.each do |e|
-          html << content_tag(:li, e.to_s)
+          html_class = build_html_class(e)
+          html << content_tag(:li, e.to_s, html_class)
         end
 
         html.html_safe
@@ -21,8 +22,18 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     private
+
     def default_options
       {}
+    end
+
+    def build_html_class(element)
+      html_class = {}
+      if element.options[:active_nav]
+        element.options.reject! {|k,v| k == :active_nav }
+        html_class = { :class => "active" }
+      end
+      html_class
     end
 
     def build_class
