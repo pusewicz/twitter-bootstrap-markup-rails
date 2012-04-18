@@ -92,6 +92,68 @@ end
       </div>'
 ```
 
+Navigation lists:
+
+Basic tabs example:
+
+    bootstrap_navigation do |nav|
+      nav.link_to "Nav1", "/link1", :active_nav => true
+      nav.link_to "Nav2", "/link2"
+    end
+    # => <ul class="nav nav-tabs">
+           <li class="active">
+             <a href="/link1">Nav1</a>
+           </li>
+           <li>
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Basic pills example:
+
+    bootstrap_navigation(:type => "pills") do |nav|
+      nav.link_to "Nav1", "/link1"
+      nav.link_to "Nav2", "/link2", :active_nav => true
+    end
+    # => <ul class="nav nav-pills">
+           <li>
+             <a href="/link1">Nav1</a>
+           </li>
+           <li class="active">
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Stacked tabs example:
+
+    bootstrap_navigation(:type => "tabs", :stacked => true) do |nav|
+      nav.link_to "Nav1", "/link1", :active_nav => true
+      nav.link_to "Nav2", "/link2"
+    end
+    # => <ul class="nav nav-tabs nav-stacked">
+           <li class="active">
+             <a href="/link1">Nav1</a>
+           </li>
+           <li>
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Stacked pills example:
+
+    bootstrap_navigation(:type => "pills", :stacked => true) do |nav|
+      nav.link_to "Nav1", "/link1"
+      nav.link_to "Nav2", "/link2", :active_nav => true
+    end
+    # => <ul class="nav nav-pills nav-stacked">
+           <li>
+             <a href="/link1">Nav1</a>
+           </li>
+           <li class="active">
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
 Plugins
 ---
 
