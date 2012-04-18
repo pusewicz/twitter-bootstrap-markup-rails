@@ -7,6 +7,7 @@ module Twitter::Bootstrap::Markup::Rails
     autoload :FormBuilder, 'twitter-bootstrap-markup-rails/components/form_builder'
     autoload :Button, 'twitter-bootstrap-markup-rails/components/button'
     autoload :ButtonDropdown, 'twitter-bootstrap-markup-rails/components/button_dropdown'
+    autoload :Navigation, 'twitter-bootstrap-markup-rails/components/navigation'
   end
 end
 
