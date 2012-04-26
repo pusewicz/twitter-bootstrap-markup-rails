@@ -17,6 +17,11 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::InlineLabelHelpers do
       concat bootstrap_inline_label_tag("Hi There")
       output_buffer.should have_tag("span", "Hi There")
     end
+
+    it "should add html_options to the resulting SPAN tag when specified" do
+      concat bootstrap_inline_label_tag("Testing", :html_options => {:"data-test" => "42"})
+      output_buffer.should have_tag("span[data-test='42']")
+    end
   end
 
   %w(success warning important notice).each do |type|

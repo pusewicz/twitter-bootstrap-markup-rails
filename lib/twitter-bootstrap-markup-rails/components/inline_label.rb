@@ -8,15 +8,16 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def to_s
-      output_buffer << content_tag(:span, message, :class => build_class).html_safe
+      output_buffer << content_tag(:span, message, build_tag_options).html_safe
       super
     end
 
     private
     def default_options
       {
-        :class   => "label",
-        :type    => nil
+        :class        => "label",
+        :type         => nil,
+        :html_options => {}
       }
     end
 
@@ -24,6 +25,11 @@ module Twitter::Bootstrap::Markup::Rails::Components
       classes = [options[:class]]
       classes << options[:type] if options[:type]
       classes.join(" ")
+    end
+
+    def build_tag_options
+      ops = {:class => build_class}
+      ops.reverse_merge(options[:html_options])
     end
   end
 end
