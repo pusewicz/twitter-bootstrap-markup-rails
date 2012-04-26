@@ -56,6 +56,11 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers do
       concat bootstrap_button("Text", "#", :id => "foo")
       output_buffer.should have_tag("a#foo")
     end
+
+    it "should add html_options to the resulting a tag when specified" do
+      concat bootstrap_button("Text", "#", :html_options => {:target => "_top"})
+      output_buffer.should have_tag("a[target='_top']")
+    end
   end
 
 

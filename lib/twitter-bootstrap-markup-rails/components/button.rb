@@ -21,12 +21,13 @@ module Twitter::Bootstrap::Markup::Rails::Components
     private
     def default_options
       {
-        :class      => "btn",
-        :type       => [],
-        :disabled   => false,
-        :icon_white => false,
-        :dropdown   => false,
-        :id         => nil
+        :class        => "btn",
+        :type         => [],
+        :disabled     => false,
+        :icon_white   => false,
+        :dropdown     => false,
+        :id           => nil,
+        :html_options => {}
       }
     end
 
@@ -59,8 +60,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
       ops = {:href => @link, :class => build_class}
       ops[:"data-toggle"] = 'dropdown' if options[:dropdown]
       ops[:id] = options[:id] if options[:id]
-      ops
+      ops.reverse_merge(options[:html_options])
     end
   end
 end
-

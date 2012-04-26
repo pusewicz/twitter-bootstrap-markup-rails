@@ -49,6 +49,11 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers do
       concat bootstrap_alert_tag("Message", :heading => "Heading1", :block => false)
       output_buffer.should have_tag('div strong', /Heading1/)
     end
+
+    it "should add html_options to the resulting DIV tag when specified" do
+      concat bootstrap_alert_tag("Message", :html_options => {:"data-test" => "42"})
+      output_buffer.should have_tag("div[data-test='42']")
+    end
   end
 
   %w(error success info).each do |type|
