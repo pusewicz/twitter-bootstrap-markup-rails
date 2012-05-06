@@ -5,6 +5,7 @@ module Twitter::Bootstrap::Markup::Rails
     autoload :FormHelpers, 'twitter-bootstrap-markup-rails/helpers/form_helpers'
     autoload :ButtonHelpers, 'twitter-bootstrap-markup-rails/helpers/button_helpers'
     autoload :NavigationHelpers, 'twitter-bootstrap-markup-rails/helpers/navigation_helpers'
+    autoload :ModalHelpers, 'twitter-bootstrap-markup-rails/helpers/modal_helpers'
   end
 end
 
