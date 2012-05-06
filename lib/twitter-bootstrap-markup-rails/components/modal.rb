@@ -9,7 +9,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def to_s
-      output_buffer << content_tag(:div, id: options[:dom_id], class: modal_classes) do
+      output_buffer << content_tag(:div, :id => options[:dom_id], :class => modal_classes) do
         html=''
         html << build_header
         html << build_body
