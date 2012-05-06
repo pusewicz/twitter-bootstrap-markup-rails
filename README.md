@@ -154,6 +154,31 @@ Stacked pills example:
            </li>
          </ul>
 
+Modal popup example:
+
+    bootstrap_modal(dom_id: 'a_dom_id', fade: true, header_title: "I'm a bootstrap modal popup") do |modal|
+      modal.body do |c|
+       c.content_tag :div, "the body"
+      end
+      modal.footer do |f|
+        f.bootstrap_button "Save", "/link1", :type => 'btn-primary'
+        f.bootstrap_button "Cancel", "/link2"
+      end
+    end
+     # => <div class="modal fade" id="a_dom_id">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">&times</a>
+              <h3>I'm a bootstrap modal popup</h3>
+            </div>
+            <div class="modal-body">
+              <div>the body</div>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-primary" href="/link1">Save</a>
+              <a class="btn" href="/link2">Cancel</a></div>
+            </div>
+          </div>
+
 Plugins
 ---
 
