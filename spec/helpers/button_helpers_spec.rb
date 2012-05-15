@@ -80,5 +80,23 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers do
         div.should have_tag('ul.dropdown-menu a')
       end
     end
+
+    it "should properly merge html_options into the container div" do
+      build_bootstrap_button_dropdown(:html_options => {:id => "foo"}) do |d|
+        d.bootstrap_button "Button Text", "#"
+        d.link_to "This", "#"
+      end
+
+      output_buffer.should have_tag('div.btn-group#foo')
+    end
+
+    it "should properly add classes from html_options onto the container div" do
+      build_bootstrap_button_dropdown(:html_options => {:class => "foo"}) do |d|
+        d.bootstrap_button "Button Text", "#"
+        d.link_to "This", "#"
+      end
+
+      output_buffer.should have_tag('div.btn-group.foo')
+    end
   end
 end
