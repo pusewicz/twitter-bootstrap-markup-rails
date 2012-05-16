@@ -23,16 +23,16 @@ module Twitter::Bootstrap::Markup::Rails::Components
     def default_options
       {:dom_id => 'twitter-bootstrap-modal', :fade => false, :header_title => ''}
     end
-    
+
     def modal_classes
-      classes = ['modal']
+      classes = %w(modal)
       classes.push 'fade' if options[:fade]
       classes.join " "
     end
-    
+
     def build_header
       content_tag(:div, :class => "modal-header") do
-        content_tag(:a, "&times".html_safe, :class => 'close', :"data-dismiss" => "modal" ) + content_tag(:h3, options[:header_title])        
+        content_tag(:a, "&times".html_safe, :class => 'close', :"data-dismiss" => "modal" ) + content_tag(:h3, options[:header_title])
       end
     end
 
@@ -41,7 +41,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
       @body_elements.each do |e|
         html << e.to_s
       end
-      content_tag(:div, html.html_safe, :class => "modal-body")      
+      content_tag(:div, html.html_safe, :class => "modal-body")
     end
 
     def build_footer
@@ -49,7 +49,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
       @footer_elements.each do |e|
         html << e.to_s
       end
-      content_tag(:div, html.html_safe, :class => "modal-footer")      
+      content_tag(:div, html.html_safe, :class => "modal-footer")
     end
 
   end

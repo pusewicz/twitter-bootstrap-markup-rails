@@ -34,7 +34,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def build_class
-      classes = ['btn-group']
+      classes = %w(btn-group)
       classes << options[:html_options][:class] if options[:html_options][:class]
       classes.join(" ")
     end
