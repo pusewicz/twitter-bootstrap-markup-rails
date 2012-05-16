@@ -8,7 +8,8 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def to_s
-      output_buffer << content_tag(:div, :class => 'btn-group') do
+      div_options = {:class => build_class}
+      output_buffer << content_tag(:div, div_options.reverse_merge(options[:html_options])) do
         html=''
         html << build_dropdown
 
@@ -27,17 +28,27 @@ module Twitter::Bootstrap::Markup::Rails::Components
 
     private
     def default_options
-      {}
+      {
+        :html_options => {}
+      }
+    end
+
+    def build_class
+      classes = ['btn-group']
+      classes << options[:html_options][:class] if options[:html_options][:class]
+      classes.join(" ")
     end
 
     def build_dropdown
+      html = ''
+
       if @elements.size > 0
         dropdown = @elements.shift
         dropdown.options[:dropdown] = true
-        dropdown.to_s
-      else
-        ''
+        html << dropdown.to_s
       end
+
+      html
     end
   end
 end
