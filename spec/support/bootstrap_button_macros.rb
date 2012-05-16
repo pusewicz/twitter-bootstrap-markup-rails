@@ -1,6 +1,6 @@
 module BootstrapButtonMacros
-  def build_bootstrap_button_dropdown(&block)
-    dropdown = bootstrap_button_dropdown do |d|
+  def build_bootstrap_button_dropdown(options = {}, &block)
+    dropdown = bootstrap_button_dropdown(options) do |d|
       block.call d
     end
     concat dropdown
