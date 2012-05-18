@@ -34,11 +34,11 @@ module Twitter::Bootstrap::Markup::Rails
     attr_accessor :method, :options, :args
 
     def initialize(view, symbol, args, block)
-      @view = view
-      @method = symbol
+      @view    = view
+      @method  = symbol
       @options = args.extract_options!
-      @args = args
-      @block = block
+      @args    = args
+      @block   = block
     end
 
     def to_s
