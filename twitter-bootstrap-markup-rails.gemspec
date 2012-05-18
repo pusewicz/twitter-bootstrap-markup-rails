@@ -27,5 +27,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'redcarpet'
   gem.add_development_dependency 'yard-tomdoc'
   gem.add_development_dependency 'simple-navigation'
+  gem.add_development_dependency (RUBY_VERSION =~ /^1\.9/ ? "simplecov" : "rcov")
 end
 
