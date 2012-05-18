@@ -122,5 +122,15 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::FormHelpers do
 
       end
     end
+
+    context "password_field" do
+      it "should wrap a text input within the magical div tags" do
+        build_bootstrap_form do |f|
+          f.password_field 'method'
+        end
+
+        output_buffer.should have_tag('div.control-group div.controls input[type=password]')
+      end
+    end
   end
 end
