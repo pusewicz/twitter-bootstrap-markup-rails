@@ -34,6 +34,7 @@ Add to your `Gemfile`:
 * Inline labels
 * Buttons
 * Button dropdowns
+* Modal windows
 
 Documentation
 ---
