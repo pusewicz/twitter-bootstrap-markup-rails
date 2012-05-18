@@ -9,258 +9,88 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
 
-      <header>
-        <h1>Twitter-bootstrap-markup-rails</h1>
-        <p>Ruby on Rails helpers for HTML, CSS, and JS toolkit from Twitter</p>
-      </header>
+    <header>
+    <h1>Twitter-bootstrap-markup-rails</h1>
+    <p>Ruby on Rails helpers for HTML, CSS, and JS toolkit from Twitter</p>
+    </header>
 
-      <div id="banner">
-        <span id="logo"></span>
+    <div id="banner">
+      <span id="logo"></span>
 
-        <a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails" class="button fork"><strong>Fork On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
+      <a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails" class="button fork"><strong>Fork On GitHub</strong></a>
+      <div class="downloads">
+        <span>Downloads:</span>
+        <ul>
+          <li><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/zipball/master" class="button">ZIP</a></li>
+          <li><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/tarball/master" class="button">TAR</a></li>
+        </ul>
+      </div>
 
-      </div><!-- end banner -->
+    </div><!-- end banner -->
 
     <div class="wrapper">
       <nav>
-        <ul></ul>
+      <ul></ul>
       </nav>
+
       <section>
-        <h1>Twitter Bootstrap 2.0 Markup for Rails</h1>
+      <h1>Twitter Bootstrap 2.0 Markup for Rails</h1>
 
-<table>
-<tr>
-<th>Version</th>
-        <td>v0.2.2</td>
-    </tr>
-<tr>
-<th>Build Status</th>
-        <td><a href="http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails"><img src="https://secure.travis-ci.org/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
-    </tr>
-<tr>
-<th>Dependency Status</th>
-        <td><a href="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails"><img src="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
-    </tr>
-<tr>
-<th>Changelog</th>
-        <td><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/wiki/Changelog">Changelog</a></td>
-    </tr>
-</table><p>This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a collection of helpers which should make it faster to use all the components provided by Twitter Bootstrap.</p>
+      <table>
+        <tr>
+          <th>Version</th>
+          <td>v0.3.0</td>
+        </tr>
+        <tr>
+          <th>Build Status</th>
+          <td><a href="http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails"><img src="https://secure.travis-ci.org/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
+        </tr>
+        <tr>
+          <th>Dependency Status</th>
+          <td><a href="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails"><img src="https://gemnasium.com/pusewicz/twitter-bootstrap-markup-rails.png"></a></td>
+        </tr>
+        <tr>
+          <th>Changelog</th>
+          <td><a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/wiki/Changelog">Changelog</a></td>
+        </tr>
+      </table><p>This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a collection of helpers which should make it faster to use all the components provided by Twitter Bootstrap.</p>
 
-<h2>Installation</h2>
+      <h2>Installation</h2>
 
-<p>Add to your <code>Gemfile</code>:</p>
+      <p>Add to your <code>Gemfile</code>:</p>
 
-<pre><code>gem 'twitter-bootstrap-markup-rails', '0.2.2'
+<pre><code>gem 'twitter-bootstrap-markup-rails', '0.3.0'
 </code></pre>
 
-<h2>Currently Supported</h2>
+      <h2>Currently Supported</h2>
 
-<ul>
-<li>Alert messages</li>
-<li>Inline labels</li>
-<li>Buttons</li>
-<li>Button dropdowns</li>
-</ul><h2>Documentation</h2>
+      <ul>
+        <li>Alert messages</li>
+        <li>Inline labels</li>
+        <li>Buttons</li>
+        <li>Button dropdowns</li>
+        <li>Modal windows</li>
+      </ul>
 
-<p>Documentation is available on <a href="http://rubydoc.info/github/pusewicz/twitter-bootstrap-markup-rails">RubyDoc</a>.</p>
+      <h2>Documentation</h2>
 
-<h2>Examples</h2>
+      <p>Check out the <a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails">README</a> file on GitHub.</p>
+      <p>Documentation is available on <a href="http://rubydoc.info/github/pusewicz/twitter-bootstrap-markup-rails">RubyDoc</a>.</p>
 
-<p>Render Alert in your view:</p>
-
-<pre><code>bootstrap_alert_tag("Hello!")
-# =&gt; '&lt;div class="alert"&gt;&lt;a class="close"&gt;×&lt;/a&gt;Hello!&lt;/div&gt;'
-</code></pre>
-
-<p>Render Info Block Alert in your view:</p>
-
-<pre><code>bootstrap_alert_info_block_tag("Hello!")
-# =&gt; '&lt;div class="alert alert-block alert-info"&gt;&lt;a class="close"&gt;×&lt;/a&gt;Hello!&lt;/div&gt;'
-</code></pre>
-
-<p>Same with basic helper:</p>
-
-<pre><code>bootstrap_alert_tag("Hello!", :block =&gt; true, :type =&gt; "info")
-# =&gt; '&lt;div class="alert alert-block alert-info"&gt;&lt;a class="close"&gt;×&lt;/a&gt;Hello!&lt;/div&gt;'
-</code></pre>
-
-<p>Add Alert heading:</p>
-
-<pre><code>bootstrap_alert_tag("Hello!", :heading =&gt; "Hola!")
-# =&gt; '&lt;div class="alert"&gt;&lt;a class="close"&gt;×&lt;/a&gt;&lt;strong&gt;Hola!&lt;/strong&gt;Hello!&lt;/div&gt;'
-</code></pre>
-
-<p>Notice Inline Label:</p>
-
-<pre><code>bootstrap_inline_label_notice_tag("Info")
-# =&gt; '&lt;span class="label notice"&gt;Info&lt;/span&gt;'
-</code></pre>
-
-<p>Buttons:</p>
-
-<pre><code>bootstrap_button("Button Text", "#")
-# =&gt; '&lt;a class="btn" href="#"&gt;Button Text&lt;/a&gt;'
-</code></pre>
-
-<p>Dropdown Buttons:</p>
-
-<pre><code>bootstrap_button_dropdown do |b|
-    b.bootstrap_button "Button Title", "#"
-    b.link_to "First Dropdown Item", @item
-    b.link_to "Second Dropdown Item", @item2
-end
-# =&gt; '&lt;div class="btn-group"&gt;
-        &lt;a class="btn dropdown-toggle" data-toggle="dropdown" href="#"&gt;
-            Button Title
-            &lt;span class="caret"&gt;&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;ul class="dropdown-menu"&gt;
-            &lt;!-- dropdown menu links --&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;'
-</code></pre>
-
-<p>Navigation lists:</p>
-
-<p>Basic tabs example:</p>
-
-<pre><code>bootstrap_navigation do |nav|
-  nav.link_to "Nav1", "/link1", :active_nav =&gt; true
-  nav.link_to "Nav2", "/link2"
-end
-# =&gt; &lt;ul class="nav nav-tabs"&gt;
-       &lt;li class="active"&gt;
-         &lt;a href="/link1"&gt;Nav1&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-         &lt;a href="/link2"&gt;Nav2&lt;/a&gt;
-       &lt;/li&gt;
-     &lt;/ul&gt;
-</code></pre>
-
-<p>Basic pills example:</p>
-
-<pre><code>bootstrap_navigation(:type =&gt; "pills") do |nav|
-  nav.link_to "Nav1", "/link1"
-  nav.link_to "Nav2", "/link2", :active_nav =&gt; true
-end
-# =&gt; &lt;ul class="nav nav-pills"&gt;
-       &lt;li&gt;
-         &lt;a href="/link1"&gt;Nav1&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li class="active"&gt;
-         &lt;a href="/link2"&gt;Nav2&lt;/a&gt;
-       &lt;/li&gt;
-     &lt;/ul&gt;
-</code></pre>
-
-<p>Stacked tabs example:</p>
-
-<pre><code>bootstrap_navigation(:type =&gt; "tabs", :stacked =&gt; true) do |nav|
-  nav.link_to "Nav1", "/link1", :active_nav =&gt; true
-  nav.link_to "Nav2", "/link2"
-end
-# =&gt; &lt;ul class="nav nav-tabs nav-stacked"&gt;
-       &lt;li class="active"&gt;
-         &lt;a href="/link1"&gt;Nav1&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-         &lt;a href="/link2"&gt;Nav2&lt;/a&gt;
-       &lt;/li&gt;
-     &lt;/ul&gt;
-</code></pre>
-
-<p>Stacked pills example:</p>
-
-<pre><code>bootstrap_navigation(:type =&gt; "pills", :stacked =&gt; true) do |nav|
-  nav.link_to "Nav1", "/link1"
-  nav.link_to "Nav2", "/link2", :active_nav =&gt; true
-end
-# =&gt; &lt;ul class="nav nav-pills nav-stacked"&gt;
-       &lt;li&gt;
-         &lt;a href="/link1"&gt;Nav1&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li class="active"&gt;
-         &lt;a href="/link2"&gt;Nav2&lt;/a&gt;
-       &lt;/li&gt;
-     &lt;/ul&gt;
-</code></pre>
-
-<h2>Plugins</h2>
-
-<h3>For <a href="https://github.com/andi/simple-navigation">SimpleNavigation</a>
-</h3>
-
-<p>If you are using <code>simple-navigation</code> gem you can use the navigation renderer like this:</p>
-
-<pre><code>render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
-</code></pre>
-
-<h2>Contributing</h2>
-
-<p>In the spirit of free software, everyone is encouraged to help improve this project.</p>
-
-<p>Here are some ways you can contribute:</p>
-
-<ul>
-<li>by using alpha, beta, and prerelease versions</li>
-<li>by reporting bugs</li>
-<li>by suggesting new features</li>
-<li>by writing or editing documentation</li>
-<li>by writing specifications</li>
-<li>by writing code (no patch is too small: fix typos, add comments, clean up inconsistent whitespace)</li>
-<li>by refactoring code</li>
-<li>by closing <a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/issues">issues</a>
-</li>
-<li>by reviewing patches</li>
-</ul><h2>Submitting an Issue</h2>
-
-<p>We use the <a href="https://github.com/pusewicz/twitter-bootstrap-markup-rails/issues">GitHub issue tracker</a> to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. You can indicate support for an existing issue by voting it up. When submitting a bug report, please include a <a href="https://gist.github.com/">gist</a> that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.</p>
-
-<h2>Submitting a Pull Request</h2>
-
-<ol>
-<li>Fork the project.</li>
-<li>Create a topic branch.</li>
-<li>Implement your feature or bug fix.</li>
-<li>Add documentation for your feature or bug fix.</li>
-<li>Run <code>bundle exec rake yard</code>. If your changes are not 100% documented, go back to step 4.</li>
-<li>Add specs for your feature or bug fix.</li>
-<li>Run <code>bundle exec rake spec</code>. If your changes are not 100% covered, go back to step 6.</li>
-<li>Commit and push your changes.</li>
-<li>Submit a pull request. Please do not include changes to the gemspec, version, or history file. (If you want to create your own version for some reason, please do so in a separate commit.)</li>
-</ol><h2>Supported Ruby Versions</h2>
-
-<p>This library aims to support and is <a href="http://travis-ci.org/pusewicz/twitter-bootstrap-markup-rails">tested against</a> the following Ruby implementations:</p>
-
-<ul>
-<li>Ruby 1.8.7</li>
-<li>Ruby 1.9.2</li>
-<li>Ruby 1.9.3</li>
-<li>Rubinius</li>
-</ul>
       </section>
       <footer>
-        <p>Project maintained by <a href="https://github.com/pusewicz">pusewicz</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      <p>Project maintained by <a href="https://github.com/pusewicz">pusewicz</a></p>
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-    
+
   </body>
 </html>
