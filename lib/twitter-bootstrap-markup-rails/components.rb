@@ -9,6 +9,7 @@ module Twitter::Bootstrap::Markup::Rails
     autoload :ButtonDropdown, 'twitter-bootstrap-markup-rails/components/button_dropdown'
     autoload :Navigation, 'twitter-bootstrap-markup-rails/components/navigation'
     autoload :Modal, 'twitter-bootstrap-markup-rails/components/modal'
+    autoload :ProgressBar, 'twitter-bootstrap-markup-rails/components/progress_bar'
   end
 end
 
