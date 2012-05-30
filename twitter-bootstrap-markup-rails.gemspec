@@ -19,8 +19,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "railties", "~> 3.0"
   gem.add_development_dependency "rails",              "~> 3.0"
   gem.add_development_dependency "rspec-rails",        "~> 2.10"
-  gem.add_development_dependency "guard",              "~> 1.0"
-  gem.add_development_dependency "guard-rspec",        "~> 0.7"
   gem.add_development_dependency "rspec_tag_matchers", ">= 1.0"
   gem.add_development_dependency "rake"
   gem.add_development_dependency 'yard'
