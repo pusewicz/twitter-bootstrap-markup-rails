@@ -15,7 +15,7 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     # Examples
     #
-    #   bootstrap_alert("Hello!")
+    #   bootstrap_alert_tag("Hello!")
     #   # => '<div class="alert"><a class="close">×</a>Hello!</div>'
     #
     # Returns HTML String for the alert
