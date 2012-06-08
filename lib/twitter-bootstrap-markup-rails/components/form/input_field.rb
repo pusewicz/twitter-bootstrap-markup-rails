@@ -13,7 +13,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
         html = ''
         html << label_html.to_s
         html << content_tag(:div, :class => 'controls') do
-          build_input_wrapper
+          build_input_wrapper << build_help_text
         end
         html.html_safe
       end
@@ -28,6 +28,12 @@ module Twitter::Bootstrap::Markup::Rails::Components
       else
         input_html
       end
+    end
+
+    def build_help_text
+      html = ''
+      html = content_tag(:p, options[:help_text], :class => 'help-block') if options[:help_text]
+      html.html_safe
     end
 
     def build_add_on_wrapper

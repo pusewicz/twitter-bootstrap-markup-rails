@@ -1,5 +1,9 @@
 # encoding: utf-8
-require 'bundler/setup'
+
+if RUBY_VERSION =~ /^1\.9/
+  require 'simplecov'
+  ENV["COVERAGE"] && SimpleCov.start
+end
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/twitter-bootstrap-markup-rails'))
 require File.expand_path(File.join(File.dirname(__FILE__), '../lib/twitter-bootstrap-markup-rails/engine'))

@@ -4,3 +4,6 @@ Gemfile.lock
 .yardoc
 doc
 pkg
+.idea
+.rvmrc
+coverage

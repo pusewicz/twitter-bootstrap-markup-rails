@@ -7,6 +7,9 @@ module Twitter::Bootstrap::Markup::Rails
         include Twitter::Bootstrap::Markup::Rails::Helpers::AlertHelpers
         include Twitter::Bootstrap::Markup::Rails::Helpers::InlineLabelHelpers
         include Twitter::Bootstrap::Markup::Rails::Helpers::FormHelpers
+        include Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers
+        include Twitter::Bootstrap::Markup::Rails::Helpers::NavigationHelpers
+        include Twitter::Bootstrap::Markup::Rails::Helpers::ModalHelpers
       end
     end
   end

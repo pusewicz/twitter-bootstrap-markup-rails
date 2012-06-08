@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["piotr@layer22.com"]
   gem.description   = %q{Ruby on Rails helpers for Bootstrap 2.0 - HTML, CSS, and JS toolkit from Twitter}
   gem.summary       = %q{Ruby on Rails helpers for Bootstrap 2.0 - HTML, CSS, and JS toolkit from Twitter}
-  gem.homepage      = "https://github.com/pusewicz/twitter-bootstrap-markup-rails"
+  gem.homepage      = "http://pusewicz.github.com/twitter-bootstrap-markup-rails"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
@@ -18,13 +18,16 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "railties", "~> 3.0"
   gem.add_development_dependency "rails",              "~> 3.0"
-  gem.add_development_dependency "rspec-rails",        "~> 2.8"
-  gem.add_development_dependency "guard",              "~> 1.0"
-  gem.add_development_dependency "guard-rspec",        "~> 0.6"
+  gem.add_development_dependency "rspec-rails",        "~> 2.10"
   gem.add_development_dependency "rspec_tag_matchers", ">= 1.0"
   gem.add_development_dependency "rake"
   gem.add_development_dependency 'yard'
+  gem.add_development_dependency 'redcarpet'
   gem.add_development_dependency 'yard-tomdoc'
   gem.add_development_dependency 'simple-navigation'
+
+  if !defined?(RUBY_ENGINE) || RUBY_ENGINE != 'rbx'
+    gem.add_development_dependency RUBY_VERSION =~ /^1\.9/ ? "simplecov" : "rcov"
+  end
 end
 

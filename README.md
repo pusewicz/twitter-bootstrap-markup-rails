@@ -3,7 +3,7 @@
 <table>
     <tr>
         <th>Version</th>
-        <td>v0.2.0</td>
+        <td>v0.3.1</td>
     </tr>
     <tr>
         <th>Build Status</th>
@@ -26,12 +26,16 @@ This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a coll
 
 Add to your `Gemfile`:
 
-    gem 'twitter-bootstrap-markup-rails', '0.2.0'
+    gem 'twitter-bootstrap-markup-rails', '0.3.1'
 
 ## Currently Supported
 
 * Alert messages
 * Inline labels
+* Buttons
+* Button dropdowns
+* Modal windows
+* Progress bars
 
 Documentation
 ---
@@ -65,6 +69,117 @@ Notice Inline Label:
 
     bootstrap_inline_label_notice_tag("Info")
     # => '<span class="label notice">Info</span>'
+
+Buttons:
+
+    bootstrap_button("Button Text", "#")
+    # => '<a class="btn" href="#">Button Text</a>'
+
+Dropdown Buttons:
+
+```
+bootstrap_button_dropdown do |b|
+    b.bootstrap_button "Button Title", "#"
+    b.link_to "First Dropdown Item", @item
+    b.link_to "Second Dropdown Item", @item2
+end
+# => '<div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            Button Title
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+        </ul>
+      </div>'
+```
+
+Navigation lists:
+
+Basic tabs example:
+
+    bootstrap_navigation do |nav|
+      nav.link_to "Nav1", "/link1", :active_nav => true
+      nav.link_to "Nav2", "/link2"
+    end
+    # => <ul class="nav nav-tabs">
+           <li class="active">
+             <a href="/link1">Nav1</a>
+           </li>
+           <li>
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Basic pills example:
+
+    bootstrap_navigation(:type => "pills") do |nav|
+      nav.link_to "Nav1", "/link1"
+      nav.link_to "Nav2", "/link2", :active_nav => true
+    end
+    # => <ul class="nav nav-pills">
+           <li>
+             <a href="/link1">Nav1</a>
+           </li>
+           <li class="active">
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Stacked tabs example:
+
+    bootstrap_navigation(:type => "tabs", :stacked => true) do |nav|
+      nav.link_to "Nav1", "/link1", :active_nav => true
+      nav.link_to "Nav2", "/link2"
+    end
+    # => <ul class="nav nav-tabs nav-stacked">
+           <li class="active">
+             <a href="/link1">Nav1</a>
+           </li>
+           <li>
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Stacked pills example:
+
+    bootstrap_navigation(:type => "pills", :stacked => true) do |nav|
+      nav.link_to "Nav1", "/link1"
+      nav.link_to "Nav2", "/link2", :active_nav => true
+    end
+    # => <ul class="nav nav-pills nav-stacked">
+           <li>
+             <a href="/link1">Nav1</a>
+           </li>
+           <li class="active">
+             <a href="/link2">Nav2</a>
+           </li>
+         </ul>
+
+Modal popup example:
+
+    bootstrap_modal(dom_id: 'a_dom_id', fade: true, header_title: "I'm a bootstrap modal popup") do |modal|
+      modal.body do |c|
+       c.content_tag :div, "the body"
+      end
+      modal.footer do |f|
+        f.bootstrap_button "Save", "/link1", :type => 'btn-primary'
+        f.bootstrap_button "Cancel", "/link2"
+      end
+    end
+     # => <div class="modal fade" id="a_dom_id">
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">&times</a>
+              <h3>I'm a bootstrap modal popup</h3>
+            </div>
+            <div class="modal-body">
+              <div>the body</div>
+            </div>
+            <div class="modal-footer">
+              <a class="btn btn-primary" href="/link1">Save</a>
+              <a class="btn" href="/link2">Cancel</a></div>
+            </div>
+          </div>
 
 Plugins
 ---

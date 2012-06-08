@@ -5,7 +5,9 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     # @param [String] message message to be displayed
     # @param [Hash] options hash containing options (default: {}):
-    #           :type    - The String type of alert to display: success warning important notice
+    #           :type         - The String type of alert to display: success warning important notice
+    #           :html_options - Any additional options you'd like to pass to the span tag that will be created
+    #                           for this label (for instance :"data-whatever" can be specified in :html_options).
     #
     # Examples
     #

@@ -16,4 +16,8 @@ describe ActionView::Base do
   it "includes inline form helpers" do
     @view.ancestors.should include(Twitter::Bootstrap::Markup::Rails::Helpers::FormHelpers)
   end
+
+  it "includes inline navigation helpers" do
+    @view.ancestors.should include(Twitter::Bootstrap::Markup::Rails::Helpers::NavigationHelpers)
+  end
 end

@@ -6,15 +6,16 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     # @param [String] message message to be displayed
     # @param [Hash] options hash containing options (default: {}):
-    #           :block   - The Boolean whether to display as a block (optional)
-    #           :close   - The Boolean whether to render close button
-    #           :heading - The String heading message to render
-    #           :dismiss - The Boolean whether to add dismiss attribute
-    #           :type    - The String type of alert to display: error, success or info
+    #           :block        - The Boolean whether to display as a block (optional)
+    #           :close        - The Boolean whether to render close button
+    #           :heading      - The String heading message to render
+    #           :dismiss      - The Boolean whether to add dismiss attribute
+    #           :type         - The String type of alert to display: error, success or info
+    #           :html_options - Any additional HTML options desired on the alert DIV.
     #
     # Examples
     #
-    #   bootstrap_alert("Hello!")
+    #   bootstrap_alert_tag("Hello!")
     #   # => '<div class="alert"><a class="close">×</a>Hello!</div>'
     #
     # Returns HTML String for the alert

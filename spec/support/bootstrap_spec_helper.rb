@@ -25,27 +25,10 @@ module BootstrapSpecHelper
   include ActiveSupport
   include ActionController::PolymorphicRoutes if defined?(ActionController::PolymorphicRoutes)
 
-  def _routes
-    url_helpers = mock('url_helpers')
-    url_helpers.stub!(:hash_for_posts_path).and_return({})
-    url_helpers.stub!(:hash_for_post_path).and_return({})
-    url_helpers.stub!(:hash_for_post_models_path).and_return({})
-    url_helpers.stub!(:hash_for_authors_path).and_return({})
-
-    mock('_routes',
-         :url_helpers => url_helpers,
-         :url_for => "/mock/path"
-        )
-  end
-
   def controller
     env = mock('env', :[] => nil)
     request = mock('request', :env => env)
     mock('controller', :controller_path= => '', :params => {}, :request => request)
-  end
-
-  def default_url_options
-    {}
   end
 
   def self.included(base)

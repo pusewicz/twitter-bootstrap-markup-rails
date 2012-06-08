@@ -8,7 +8,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def to_s
-      output_buffer << content_tag(:div, :class => build_class) do
+      output_buffer << content_tag(:div, build_div_options) do
         html = ""
         html << build_close_tag.html_safe   if options[:close]
         html << build_heading_tag.html_safe if options[:heading]
@@ -21,12 +21,13 @@ module Twitter::Bootstrap::Markup::Rails::Components
     private
     def default_options
       {
-        :class   => "alert",
-        :block   => false,
-        :close   => true,
-        :heading => nil,
-        :dismiss => true,
-        :type    => nil,
+        :class        => "alert",
+        :block        => false,
+        :close        => true,
+        :heading      => nil,
+        :dismiss      => true,
+        :type         => nil,
+        :html_options => {}
       }
     end
 
@@ -50,6 +51,11 @@ module Twitter::Bootstrap::Markup::Rails::Components
       opts = { :class => "close" }
       opts["data-dismiss"] = "alert" if options[:dismiss]
       opts
+    end
+
+    def build_div_options
+      opts = { :class => build_class }
+      opts.reverse_merge(options[:html_options])
     end
 
     def build_class

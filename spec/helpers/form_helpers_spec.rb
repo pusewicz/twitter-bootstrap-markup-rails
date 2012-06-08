@@ -108,6 +108,28 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::FormHelpers do
           end
         end
 
+        it "should add a help-block with custom text if :html_text is specified" do
+          build_bootstrap_form do |f|
+            f.text_field 'method', :help_text => 'You need help!'
+          end
+
+          output_buffer.should have_tag('div.control-group') do |div|
+            div.should have_tag('div.controls') do |div|
+              div.should have_tag('p', :class => 'help-block', :text => 'You need help!')
+            end
+          end
+        end
+
+      end
+    end
+
+    context "password_field" do
+      it "should wrap a text input within the magical div tags" do
+        build_bootstrap_form do |f|
+          f.password_field 'method'
+        end
+
+        output_buffer.should have_tag('div.control-group div.controls input[type=password]')
       end
     end
   end
