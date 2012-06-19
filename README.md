@@ -203,6 +203,7 @@ end
 #         <a class="btn" href="/link2">Cancel</a></div>
 #       </div>
 #     </div>'
+```
 
 Plugins
 ---
