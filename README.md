@@ -26,7 +26,9 @@ This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a coll
 
 Add to your `Gemfile`:
 
-    gem 'twitter-bootstrap-markup-rails', '0.3.1'
+```ruby
+gem 'twitter-bootstrap-markup-rails', '0.3.1'
+```
 
 ## Currently Supported
 
@@ -45,141 +47,162 @@ Documentation is available on [RubyDoc](http://rubydoc.info/github/pusewicz/twit
 Examples
 ---
 
-Render Alert in your view:
+### Rendering Alert
 
-    bootstrap_alert_tag("Hello!")
-    # => '<div class="alert"><a class="close">×</a>Hello!</div>'
+```ruby
+bootstrap_alert_tag("Hello!")
+# => '<div class="alert"><a class="close">×</a>Hello!</div>'
+```
 
-Render Info Block Alert in your view:
+### Rendering Info Block Alert
 
-    bootstrap_alert_info_block_tag("Hello!")
-    # => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
+```ruby
+bootstrap_alert_info_block_tag("Hello!")
+# => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
+```
 
 Same with basic helper:
 
-    bootstrap_alert_tag("Hello!", :block => true, :type => "info")
-    # => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
+```ruby
+bootstrap_alert_tag("Hello!", :block => true, :type => "info")
+# => '<div class="alert alert-block alert-info"><a class="close">×</a>Hello!</div>'
+```
 
 Add Alert heading:
 
-    bootstrap_alert_tag("Hello!", :heading => "Hola!")
-    # => '<div class="alert"><a class="close">×</a><strong>Hola!</strong>Hello!</div>'
-
-Notice Inline Label:
-
-    bootstrap_inline_label_notice_tag("Info")
-    # => '<span class="label notice">Info</span>'
-
-Buttons:
-
-    bootstrap_button("Button Text", "#")
-    # => '<a class="btn" href="#">Button Text</a>'
-
-Dropdown Buttons:
-
+```ruby
+bootstrap_alert_tag("Hello!", :heading => "Hola!")
+# => '<div class="alert"><a class="close">×</a><strong>Hola!</strong>Hello!</div>'
 ```
+
+### Notice Inline Label
+
+```ruby
+bootstrap_inline_label_notice_tag("Info")
+# => '<span class="label notice">Info</span>'
+```
+
+### Buttons
+
+```ruby
+bootstrap_button("Button Text", "#")
+# => '<a class="btn" href="#">Button Text</a>'
+```
+
+### Dropdown Buttons
+
+```ruby
 bootstrap_button_dropdown do |b|
     b.bootstrap_button "Button Title", "#"
     b.link_to "First Dropdown Item", @item
     b.link_to "Second Dropdown Item", @item2
 end
-# => '<div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            Button Title
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <!-- dropdown menu links -->
-        </ul>
-      </div>'
+#  => '<div class="btn-group">
+#        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+#          Button Title
+#          <span class="caret"></span>
+#        </a>
+#        <ul class="dropdown-menu">
+#          <!-- dropdown menu links -->
+#        </ul>
+#      </div>'
 ```
 
-Navigation lists:
+### Navigation lists
 
-Basic tabs example:
+### Basic tabs example
 
-    bootstrap_navigation do |nav|
-      nav.link_to "Nav1", "/link1", :active_nav => true
-      nav.link_to "Nav2", "/link2"
-    end
-    # => <ul class="nav nav-tabs">
-           <li class="active">
-             <a href="/link1">Nav1</a>
-           </li>
-           <li>
-             <a href="/link2">Nav2</a>
-           </li>
-         </ul>
+```ruby
+bootstrap_navigation do |nav|
+  nav.link_to "Nav1", "/link1", :active_nav => true
+  nav.link_to "Nav2", "/link2"
+end
+# => '<ul class="nav nav-tabs">
+#       <li class="active">
+#         <a href="/link1">Nav1</a>
+#       </li>
+#       <li>
+#         <a href="/link2">Nav2</a>
+#       </li>
+#     </ul>'
+```
 
-Basic pills example:
+### Basic pills example
 
-    bootstrap_navigation(:type => "pills") do |nav|
-      nav.link_to "Nav1", "/link1"
-      nav.link_to "Nav2", "/link2", :active_nav => true
-    end
-    # => <ul class="nav nav-pills">
-           <li>
-             <a href="/link1">Nav1</a>
-           </li>
-           <li class="active">
-             <a href="/link2">Nav2</a>
-           </li>
-         </ul>
+```ruby
+bootstrap_navigation(:type => "pills") do |nav|
+  nav.link_to "Nav1", "/link1"
+  nav.link_to "Nav2", "/link2", :active_nav => true
+end
+# => '<ul class="nav nav-pills">
+#       <li>
+#         <a href="/link1">Nav1</a>
+#       </li>
+#       <li class="active">
+#         <a href="/link2">Nav2</a>
+#       </li>
+#     </ul>'
+```
 
-Stacked tabs example:
+### Stacked tabs example
 
-    bootstrap_navigation(:type => "tabs", :stacked => true) do |nav|
-      nav.link_to "Nav1", "/link1", :active_nav => true
-      nav.link_to "Nav2", "/link2"
-    end
-    # => <ul class="nav nav-tabs nav-stacked">
-           <li class="active">
-             <a href="/link1">Nav1</a>
-           </li>
-           <li>
-             <a href="/link2">Nav2</a>
-           </li>
-         </ul>
+```ruby
+bootstrap_navigation(:type => "tabs", :stacked => true) do |nav|
+  nav.link_to "Nav1", "/link1", :active_nav => true
+  nav.link_to "Nav2", "/link2"
+end
+# => '<ul class="nav nav-tabs nav-stacked">
+#       <li class="active">
+#         <a href="/link1">Nav1</a>
+#       </li>
+#       <li>
+#         <a href="/link2">Nav2</a>
+#       </li>
+#     </ul>'
+```
 
-Stacked pills example:
+### Stacked pills example
 
-    bootstrap_navigation(:type => "pills", :stacked => true) do |nav|
-      nav.link_to "Nav1", "/link1"
-      nav.link_to "Nav2", "/link2", :active_nav => true
-    end
-    # => <ul class="nav nav-pills nav-stacked">
-           <li>
-             <a href="/link1">Nav1</a>
-           </li>
-           <li class="active">
-             <a href="/link2">Nav2</a>
-           </li>
-         </ul>
+```ruby
+bootstrap_navigation(:type => "pills", :stacked => true) do |nav|
+  nav.link_to "Nav1", "/link1"
+  nav.link_to "Nav2", "/link2", :active_nav => true
+end
+# => '<ul class="nav nav-pills nav-stacked">
+#       <li>
+#         <a href="/link1">Nav1</a>
+#       </li>
+#       <li class="active">
+#         <a href="/link2">Nav2</a>
+#       </li>
+#     </ul>'
+```
 
-Modal popup example:
+### Modal popup example
 
-    bootstrap_modal(dom_id: 'a_dom_id', fade: true, header_title: "I'm a bootstrap modal popup") do |modal|
-      modal.body do |c|
-       c.content_tag :div, "the body"
-      end
-      modal.footer do |f|
-        f.bootstrap_button "Save", "/link1", :type => 'btn-primary'
-        f.bootstrap_button "Cancel", "/link2"
-      end
-    end
-     # => <div class="modal fade" id="a_dom_id">
-            <div class="modal-header">
-              <a class="close" data-dismiss="modal">&times</a>
-              <h3>I'm a bootstrap modal popup</h3>
-            </div>
-            <div class="modal-body">
-              <div>the body</div>
-            </div>
-            <div class="modal-footer">
-              <a class="btn btn-primary" href="/link1">Save</a>
-              <a class="btn" href="/link2">Cancel</a></div>
-            </div>
-          </div>
+```ruby
+bootstrap_modal(dom_id: 'a_dom_id', fade: true, header_title: "I'm a bootstrap modal popup") do |modal|
+  modal.body do |c|
+   c.content_tag :div, "the body"
+  end
+  modal.footer do |f|
+    f.bootstrap_button "Save", "/link1", :type => 'btn-primary'
+    f.bootstrap_button "Cancel", "/link2"
+  end
+end
+# => '<div class="modal fade" id="a_dom_id">
+#       <div class="modal-header">
+#         <a class="close" data-dismiss="modal">&times</a>
+#         <h3>I'm a bootstrap modal popup</h3>
+#       </div>
+#       <div class="modal-body">
+#         <div>the body</div>
+#       </div>
+#       <div class="modal-footer">
+#         <a class="btn btn-primary" href="/link1">Save</a>
+#         <a class="btn" href="/link2">Cancel</a></div>
+#       </div>
+#     </div>'
 
 Plugins
 ---
@@ -188,7 +211,9 @@ Plugins
 
 If you are using `simple-navigation` gem you can use the navigation renderer like this:
 
-    render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
+```ruby
+render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
+```
 
 Contributing
 ---
