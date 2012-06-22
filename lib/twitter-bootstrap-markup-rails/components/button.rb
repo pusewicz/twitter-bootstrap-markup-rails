@@ -1,11 +1,13 @@
 module Twitter::Bootstrap::Markup::Rails::Components
   class Button < Base
+    include ActionView::Helpers::UrlHelper
+
     attr_reader :text
 
     def initialize(text, link, options = {})
       super
       @text = text
-      @link = link
+      @link = url_for(link)
     end
 
     def to_s
@@ -35,7 +37,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
       classes = [options[:class]]
 
       if options[:type].is_a?(Array)
-        classes = classes | options[:type].map{|c| c.to_s}
+        classes = classes | options[:type].map { |c| c.to_s }
       else
         classes << options[:type]
       end
@@ -57,7 +59,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def build_tag_options
-      ops = {:href => @link, :class => build_class}
+      ops = { :href => @link, :class => build_class }
       ops[:"data-toggle"] = 'dropdown' if options[:dropdown]
       ops[:id] = options[:id] if options[:id]
       ops.reverse_merge(options[:html_options])
