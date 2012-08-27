@@ -22,6 +22,18 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::NavigationHelpers do
       end
     end
 
+    it "should create a basic navigation list of type tabs with a custom, user specified, ID" do
+      build_bootstrap_navigation(:custom_classes => "testing") do |nav|
+        nav.link_to "Nav1", "/link1", :active_nav => true
+        nav.link_to "Nav2", "/link2"
+      end
+
+      output_buffer.should have_tag('ul.nav.nav-tabs.testing') do |ul|
+        ul.should have_tag('li[@class="active"] a[@href="/link1"]')
+        ul.should have_tag('li a[@href="/link1"]')
+      end
+    end
+
     it "should create a basic navigation list of type pills" do
       build_bootstrap_navigation(:type => "pills") do |nav|
         nav.link_to "Nav1", "/link1"
