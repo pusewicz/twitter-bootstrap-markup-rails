@@ -8,6 +8,7 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     # @param [Hash] options hash containing options (default: {}):
     #            :type    - could be either 'tabs' or 'pills'. Default is 'tabs'.
     #            :stacked - if true, renders the navigation list in stacked mode.
+    #            :custom_classes - add additional classes to the navigation UL
     #
     # Examples
     #
