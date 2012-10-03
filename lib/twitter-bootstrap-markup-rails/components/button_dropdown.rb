@@ -13,7 +13,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
         html=''
         html << build_dropdown
 
-        html << content_tag(:ul, :class => 'dropdown-menu') do
+        html << content_tag(:ul, build_menu_html_options) do
           menu = ''
           @elements.each do |e|
             menu << content_tag(:li, e.to_s)
@@ -29,7 +29,10 @@ module Twitter::Bootstrap::Markup::Rails::Components
     private
     def default_options
       {
-        :html_options => {}
+        :html_options => {},
+        :split => false,
+        :button_options => {},
+        :menu_html_options => {}
       }
     end
 
@@ -39,13 +42,27 @@ module Twitter::Bootstrap::Markup::Rails::Components
       classes.join(" ")
     end
 
+    def build_menu_html_options
+      classes = %w(dropdown-menu)
+      classes << options[:menu_html_options][:class] if options[:menu_html_options][:class]
+
+      options[:menu_html_options].merge(:class => classes.join(" "))
+    end
+
     def build_dropdown
       html = ''
 
       if @elements.size > 0
         dropdown = @elements.shift
-        dropdown.options[:dropdown] = true
+        dropdown.options.merge!(options[:button_options])
+        dropdown.options[:dropdown] = !options[:split]
+
         html << dropdown.to_s
+
+        if options[:split]
+          caret = Button.new({:dropdown => true}.merge(options[:button_options]))
+          html << caret.to_s
+        end
       end
 
       html
