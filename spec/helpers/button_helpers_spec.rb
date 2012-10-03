@@ -61,6 +61,16 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers do
       concat bootstrap_button("Text", "#", :html_options => {:target => "_top"})
       output_buffer.should have_tag("a[target='_top']")
     end
+
+    it "should accept a block instead of text" do
+      concat bootstrap_button("#"){"<span class='content'>Text</span>"}
+      output_buffer.should have_tag("a span.content")
+    end
+
+    it "should set href to '#' if link is not given" do
+      concat bootstrap_button
+      output_buffer.should have_tag("a[href='#']")
+    end
   end
 
 
