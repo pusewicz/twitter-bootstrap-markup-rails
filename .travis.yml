@@ -6,6 +6,7 @@ rvm:
   - rbx
 
 gemfile:
-  - gemfiles/rails-3.gemfile
-  - gemfiles/rails-3.1.gemfile
-  - gemfiles/rails-3.2.gemfile
+  - Gemfile
+  - rails-3.gemfile
+  - rails-3.1.gemfile
+  - rails-3.2.gemfile
