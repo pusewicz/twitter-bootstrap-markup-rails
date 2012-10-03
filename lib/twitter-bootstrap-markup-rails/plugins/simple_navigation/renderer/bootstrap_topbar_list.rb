@@ -55,7 +55,8 @@ class SimpleNavigation::Renderer::BootstrapTopbarList < SimpleNavigation::Render
     opts = special_options.merge(link_options)
     opts[:class] = [link_options[:class], item.selected_class, dropdown_link_class(item)].flatten.compact.join(' ')
     if include_sub_navigation?(item) && !options[:is_subnavigation]
-      opts['data-toggle'] = 'dropdown'
+      opts[:'data-toggle'] = 'dropdown'
+      opts[:'data-target'] = '#'
     end
     opts.delete(:class) if opts[:class].nil? || opts[:class] == ''
     opts
