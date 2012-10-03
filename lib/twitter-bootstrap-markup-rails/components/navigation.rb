@@ -40,6 +40,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
       classes = %w( nav )
       classes << "nav-#{ options[:type] || "tabs" }"
       classes << "nav-stacked" if options[:stacked]
+      classes << options[:custom_classes]
       classes.join(" ")
     end
   end
