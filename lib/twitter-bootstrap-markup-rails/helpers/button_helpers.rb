@@ -20,12 +20,20 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #
     #   bootstrap_button 'Search', '#', :type => 'btn-primary', :icon => 'icon-search'
     #
-    def bootstrap_button(text, link, options = {})
-      Twitter::Bootstrap::Markup::Rails::Components::Button.new(
-        text,
-        link,
-        options
-      ).to_s
+    def bootstrap_button(*args, &block)
+      options = args.extract_options!
+
+      if block_given?
+        options[:text] = block
+      elsif args.present?
+        options[:text] = args.shift
+      end
+
+      if args.present?
+        options[:link] = args.shift
+      end
+
+      Twitter::Bootstrap::Markup::Rails::Components::Button.new(options).to_s
     end
 
     # Render a dropdown button

@@ -2,18 +2,10 @@ module Twitter::Bootstrap::Markup::Rails::Components
   class Button < Base
     include ActionView::Helpers::UrlHelper
 
-    attr_reader :text
-
-    def initialize(text, link, options = {})
-      super
-      @text = text
-      @link = url_for(link)
-    end
-
     def to_s
       html_text = ""
       html_text << build_icon.html_safe << ' ' if options[:icon]
-      html_text << text
+      html_text << (options[:text].respond_to?(:call) ? options[:text].call : options[:text]).to_s
       html_text << ' ' << build_caret.html_safe if options[:dropdown]
 
       output_buffer << content_tag(:a, html_text.html_safe, build_tag_options).html_safe
@@ -23,6 +15,8 @@ module Twitter::Bootstrap::Markup::Rails::Components
     private
     def default_options
       {
+        :text         => nil,
+        :link         => "#",
         :class        => "btn",
         :type         => [],
         :disabled     => false,
@@ -59,10 +53,14 @@ module Twitter::Bootstrap::Markup::Rails::Components
     end
 
     def build_tag_options
-      ops = { :href => @link, :class => build_class }
+      ops = { :href => build_link, :class => build_class }
       ops[:"data-toggle"] = 'dropdown' if options[:dropdown]
       ops[:id] = options[:id] if options[:id]
       ops.reverse_merge(options[:html_options])
+    end
+
+    def build_link
+      url_for(options[:link]) if options[:link].present?
     end
   end
 end

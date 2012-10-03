@@ -61,6 +61,16 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers do
       concat bootstrap_button("Text", "#", :html_options => {:target => "_top"})
       output_buffer.should have_tag("a[target='_top']")
     end
+
+    it "should accept a block instead of text" do
+      concat bootstrap_button("#"){"<span class='content'>Text</span>"}
+      output_buffer.should have_tag("a span.content")
+    end
+
+    it "should set href to '#' if link is not given" do
+      concat bootstrap_button
+      output_buffer.should have_tag("a[href='#']")
+    end
   end
 
 
@@ -97,6 +107,44 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::ButtonHelpers do
       end
 
       output_buffer.should have_tag('div.btn-group.foo')
+    end
+
+    it "should build a split dropdown if split=true" do
+      build_bootstrap_button_dropdown(:split => true) do |d|
+        d.bootstrap_button "Button Text", "#", :class => "foo"
+        d.link_to "This", "#"
+      end
+
+      output_buffer.should have_tag('div.btn-group') do |div|
+        div.should have_tag('a.foo')
+        div.should have_tag('a.dropdown-toggle')
+        # Ensure that a.foo and a.dropdown-toggle are two different links
+        div.should_not have_tag('a.foo.dropdown-toggle')
+        div.should have_tag('ul.dropdown-menu a')
+      end
+    end
+
+    it "should pass button_options to its buttons" do
+      build_bootstrap_button_dropdown(:split => true, :button_options => {:type => "btn-success"}) do |d|
+        d.bootstrap_button "Button Text", "#", :class => "foo"
+        d.link_to "This", "#"
+      end
+
+      output_buffer.should have_tag('div.btn-group') do |div|
+        div.should have_tag('a.foo.btn-success')
+        div.should have_tag('a.dropdown-toggle.btn-success')
+      end
+    end
+
+    it "should properly merge menu_html_options" do
+      build_bootstrap_button_dropdown(:menu_html_options => {:class => "pull-right"}) do |d|
+        d.bootstrap_button "Button Text", "#", :class => "foo"
+        d.link_to "This", "#"
+      end
+
+      output_buffer.should have_tag('div.btn-group') do |div|
+        div.should have_tag('ul.dropdown-menu.pull-right')
+      end
     end
   end
 end
