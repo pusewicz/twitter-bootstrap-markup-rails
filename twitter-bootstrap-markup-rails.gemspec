@@ -17,17 +17,4 @@ Gem::Specification.new do |gem|
   gem.platform      = Gem::Platform::RUBY
 
   gem.add_dependency "railties", "~> 3.0"
-  gem.add_development_dependency "rails",              "~> 3.0"
-  gem.add_development_dependency "rspec-rails",        "~> 2.10"
-  gem.add_development_dependency "rspec_tag_matchers", ">= 1.0"
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'redcarpet'
-  gem.add_development_dependency 'yard-tomdoc'
-  gem.add_development_dependency 'simple-navigation'
-
-  if !defined?(RUBY_ENGINE) || RUBY_ENGINE != 'rbx'
-    gem.add_development_dependency RUBY_VERSION =~ /^1\.9/ ? "simplecov" : "rcov"
-  end
 end
-
