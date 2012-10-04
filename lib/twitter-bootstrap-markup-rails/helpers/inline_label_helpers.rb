@@ -22,7 +22,7 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
       ).to_s
     end
 
-    %w(success warning important notice).each do |type|
+    %w(success warning important notice info inverse).each do |type|
       module_eval <<-EOF
         def bootstrap_inline_label_#{type}_tag(message, options = {})
           bootstrap_inline_label_tag(message, options.merge({ :type => "#{type}" }))
