@@ -37,7 +37,7 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::InlineLabelHelpers do
 
       it "has #{type} class" do
         concat send("bootstrap_inline_label_#{type}_tag", "Message")
-        output_buffer.should have_tag("span.#{type}")
+        output_buffer.should have_tag("span.label-#{type}")
       end
 
       it "has a message" do
