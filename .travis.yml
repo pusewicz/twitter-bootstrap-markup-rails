@@ -11,3 +11,5 @@ gemfile:
   - rails-3.gemfile
   - rails-3.1.gemfile
   - rails-3.2.gemfile
+
+script: rake --trace

@@ -11,7 +11,7 @@ begin
   YARD::Rake::YardocTask.new do |t|
     t.files   = ['lib/**/*.rb']
   end
-rescue
+rescue Exception
   puts "No yard gem available"
 end
 
