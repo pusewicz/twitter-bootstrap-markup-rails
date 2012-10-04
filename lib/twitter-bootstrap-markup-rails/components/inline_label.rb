@@ -23,7 +23,7 @@ module Twitter::Bootstrap::Markup::Rails::Components
 
     def build_class
       classes = [options[:class]]
-      classes << options[:type] if options[:type]
+      classes << "label-#{options[:type]}" if options[:type]
       classes.join(" ")
     end
 
