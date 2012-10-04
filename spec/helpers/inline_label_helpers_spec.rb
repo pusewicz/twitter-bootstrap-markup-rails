@@ -24,7 +24,7 @@ describe Twitter::Bootstrap::Markup::Rails::Helpers::InlineLabelHelpers do
     end
   end
 
-  %w(success warning important notice).each do |type|
+  %w(success warning important notice info inverse).each do |type|
     describe "#inline_label_#{type}_tag" do
       before do
         @output_buffer = ''
