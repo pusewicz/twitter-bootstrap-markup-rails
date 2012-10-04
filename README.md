@@ -3,7 +3,7 @@
 <table>
     <tr>
         <th>Version</th>
-        <td>v0.3.2.1</td>
+        <td>v0.3.2.2</td>
     </tr>
     <tr>
         <th>Build Status</th>
@@ -27,7 +27,7 @@ This gem focuses on making it easier to use Twitter's Bootstrap 2.0. It's a coll
 Add to your `Gemfile`:
 
 ```ruby
-gem 'twitter-bootstrap-markup-rails', '0.3.2.1'
+gem 'twitter-bootstrap-markup-rails', '0.3.2.2'
 ```
 
 ## Currently Supported
