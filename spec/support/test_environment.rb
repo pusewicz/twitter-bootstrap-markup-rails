@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require 'rspec'
+require 'rspec-rails'
 require 'rspec_tag_matchers'
 
 RSpec.configure do |config|
