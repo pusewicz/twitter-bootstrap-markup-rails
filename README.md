@@ -212,12 +212,6 @@ Plugins
 
 If you are using `simple-navigation` gem you can use the navigation renderer like this:
 
-In your initializer:
-
-```ruby
-SimpleNavigation.register_renderer :bootstrap_topbar_list => SimpleNavigation::Renderer::BootstrapTopbarList
-```
-
 ```ruby
 render_navigation(level: 1..2, renderer: :bootstrap_topbar_list, expand_all: true)
 ```
