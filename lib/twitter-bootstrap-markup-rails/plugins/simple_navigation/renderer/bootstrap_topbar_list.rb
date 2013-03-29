@@ -70,4 +70,4 @@ class SimpleNavigation::Renderer::BootstrapTopbarList < SimpleNavigation::Render
 end
 
 SimpleNavigation.register_renderer :bootstrap_topbar_list => SimpleNavigation::Renderer::BootstrapTopbarList
-
+SimpleNavigation.config.selected_class = 'active'
