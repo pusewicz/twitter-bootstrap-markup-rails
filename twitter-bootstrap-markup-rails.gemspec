@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Twitter::Bootstrap::Markup::Rails::VERSION
   gem.platform      = Gem::Platform::RUBY
 
-  gem.add_dependency "railties", "~> 3.0"
+  gem.add_dependency "railties", ">= 3.0"
   gem.add_development_dependency "rspec-rails"
   gem.add_development_dependency "rspec_tag_matchers"
   gem.add_development_dependency "simple-navigation"
