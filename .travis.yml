@@ -1,6 +1,7 @@
 language: ruby
 
 before_install: gem install bundler
+before_script: export RUBY_GC_MALLOC_LIMIT=90000000
 
 rvm:
   - 1.8.7
