@@ -7,6 +7,7 @@ module Twitter::Bootstrap::Markup::Rails
     autoload :NavigationHelpers, 'twitter-bootstrap-markup-rails/helpers/navigation_helpers'
     autoload :ModalHelpers, 'twitter-bootstrap-markup-rails/helpers/modal_helpers'
     autoload :ProgressBarHelpers, 'twitter-bootstrap-markup-rails/helpers/progress_bar_helpers'
+    autoload :IconHelpers, 'twitter-bootstrap-markup-rails/helpers/icon_helpers'
   end
 end
 
