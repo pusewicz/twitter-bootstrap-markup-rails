@@ -13,7 +13,7 @@ module Twitter::Bootstrap::Markup::Rails::Helpers
     #   # => '<i class="icon-globe"></i>'
     #
     #   bootstrap_icon("briefcase", :color => "white")
-    #   # => '<i class="icon-globe icon-white"></i>'
+    #   # => '<i class="icon-briefcase icon-white"></i>'
     #
     # @param [String] name the name of the icon to display (e.g. "search", "thumbs-up")
     # @option options [String] :color ("black") the color set from which the icon is chosen
