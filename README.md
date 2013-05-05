@@ -38,6 +38,7 @@ gem 'twitter-bootstrap-markup-rails', '0.3.2.2'
 * Button dropdowns
 * Modal windows
 * Progress bars
+* Icons
 
 Documentation
 ---
