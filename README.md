@@ -261,3 +261,7 @@ This library aims to support and is [tested against](http://travis-ci.org/pusewi
 * Ruby 1.9.2
 * Ruby 1.9.3
 * Rubinius
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pusewicz/twitter-bootstrap-markup-rails/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
